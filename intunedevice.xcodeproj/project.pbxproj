@@ -23,10 +23,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		ACCF17E32D28452300E4D589 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		ACCF178A2D27FE5E00E4D589 /* intunedevice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = intunedevice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACCF179B2D27FE5F00E4D589 /* intunedeviceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = intunedeviceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACCF17A52D27FE5F00E4D589 /* intunedeviceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = intunedeviceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACCF17D52D28452300E4D589 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -43,6 +57,11 @@
 		ACCF17A82D27FE5F00E4D589 /* intunedeviceUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = intunedeviceUITests;
+			sourceTree = "<group>";
+		};
+		ACCF17D72D28452300E4D589 /* Outgoing Connections */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Outgoing Connections";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -78,6 +97,8 @@
 				ACCF178C2D27FE5E00E4D589 /* intunedevice */,
 				ACCF179E2D27FE5F00E4D589 /* intunedeviceTests */,
 				ACCF17A82D27FE5F00E4D589 /* intunedeviceUITests */,
+				ACCF17D72D28452300E4D589 /* Outgoing Connections */,
+				ACCF17D42D28452300E4D589 /* Frameworks */,
 				ACCF178B2D27FE5E00E4D589 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,6 +113,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		ACCF17D42D28452300E4D589 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ACCF17D52D28452300E4D589 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,6 +131,7 @@
 				ACCF17862D27FE5E00E4D589 /* Sources */,
 				ACCF17872D27FE5E00E4D589 /* Frameworks */,
 				ACCF17882D27FE5E00E4D589 /* Resources */,
+				ACCF17E32D28452300E4D589 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);

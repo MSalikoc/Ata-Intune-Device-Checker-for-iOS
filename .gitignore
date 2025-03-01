@@ -1,0 +1,13 @@
+# Xcode ve macOS dosyaları
+.DS_Store
+*.xcuserstate
+*.xcworkspace
+*.xcuserdata
+
+# Build klasörleri
+build/
+DerivedData/
+
+# CocoaPods kullanıyorsan:
+Pods/
+Podfile.lock
