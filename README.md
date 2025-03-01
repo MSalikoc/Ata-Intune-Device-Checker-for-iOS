@@ -22,23 +22,71 @@ Bu uygulama **IT profesyonelleri** için özel olarak geliştirilmiştir ve **Mi
 ## 📸 **Ekran Görüntüleri**
 
 | **Kimlik Doğrulama**  
-|---------------------|-----------------|----------------|
-| ![Login](screenshots/auth1.png) | ![Login](screenshots/auth2.png) | ![Login](screenshots/auth3.png) | ![Login](screenshots/code.png) | ![Login](screenshots/auth4.png) | ![Login](screenshots/permisson.png) ![Login](screenshots/auth5.png) |
-| **Cihaz Listesi** |
-| ![Alldevices](screenshots/alldevices.png) | ![search](screenshots/search.png) | ![Action](screenshots/action.png) | ![Wipe](screenshots/wipe.png) | ![delete](screenshots/delete.png) | ![sync](screenshots/sync.png)
-**Cihaz Uyumluluk Durumu** |
-![Compliant](screenshots/compliant.png)
+| ![Login](screenshots/auth1.png) | ![Login](screenshots/auth2.png) | ![Login](screenshots/auth3.png) | ![Login](screenshots/code.png) | ![Login](screenshots/auth4.png) | ![Login](screenshots/permisson.png) ![Login](screenshots/auth5.png)
 
-_(Gerçek ekran görüntülerini eklemek için `screenshots/` dizinine kaydet ve bağlantılarını güncelle.)_
+| **Cihaz Listesi** 
+
+![Alldevices](screenshots/alldevices.png) | ![search](screenshots/search.png) | ![Action](screenshots/action.png) | ![Wipe](screenshots/Wipe.png) | ![delete](screenshots/delete.png) | ![sync](screenshots/sync.png)
+
+**Cihaz Uyumluluk Durumu**
+[Compliant](screenshots/compliant.png)
 
 ---
 
 ## 🛠️ **Kurulum ve Kullanım**
 
-### **1️⃣ Projeyi Klonla**
-```bash
-git clone https://github.com/MSalikoc/Ata-Intune-Device-Checker-for-iOS.git
-cd Ata-Intune-Device-Checker-for-iOS
+# 🛠️ App Registration & Yetkilendirme  
+
+📌 **ATA Intune Device Checker**, **Microsoft Graph API** aracılığıyla cihaz yönetimi gerçekleştirdiği için **Azure AD üzerinde bir App Registration (Uygulama Kaydı)** oluşturulması ve **ilgili yetkilerin (permissions) verilmesi gerekmektedir**.  
+
+Bu kılavuz, **Azure Active Directory (Azure AD)** üzerinde **uygulama kaydı oluşturma ve gerekli izinleri verme** adımlarını içermektedir.  
+
+---
+
+## **📌 1️⃣ Azure Portal’da Uygulama Kaydı Oluşturma**  
+1. **Azure Portal’a giriş yap:**  
+   🔗 [Azure AD Uygulama Kayıtları](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) sayfasına git.  
+2. **"New Registration" (Yeni Kayıt)** butonuna tıkla.  
+3. **Application Name (Uygulama Adı)** olarak **ATA Intune Device Checker** yaz.  
+4. **Desteklenen hesap türü:**  
+   - Eğer **tüm tenant’larda kullanılmasını istiyorsan:**  
+     ✅ **"Accounts in any organizational directory (Any Azure AD directory - Multitenant)"** seçeneğini seç.  
+   - Eğer **sadece kendi organizasyonun içinde çalışacaksa:**  
+     ✅ **"Accounts in this organizational directory only (Single tenant)"** seçeneğini seç.  
+5. **Redirect URI (Geri Çağırma URL’si):**  
+   - Platform olarak **iOS/macOS** seç.  
+   - `msauth.<bundle_id>://auth` şeklinde gir (**Xcode'daki Bundle ID’ye göre değişir**).  
+6. **"Register" (Kaydet) butonuna tıkla** ve uygulama kaydını oluştur.  
+
+---
+
+## **📌 2️⃣ API Permissions (Gerekli Yetkileri Verme)**  
+📌 **ATA Intune Device Checker** uygulamasının **Microsoft Graph API’ye erişebilmesi için aşağıdaki yetkileri eklemelisin**.  
+
+1. **Azure Portal’da "App registrations" (Uygulama Kayıtları) sekmesine git.**  
+2. **Uygulamanı seç.**  
+3. Sol menüden **"API Permissions" (API İzinleri)** sekmesine git.  
+4. **"Add a permission" (İzin Ekle) butonuna tıkla.**  
+5. **Microsoft Graph API’yi seç.**  
+
+### **📌 Gerekli Yetkiler (Permissions):**  
+
+| **Yetki Adı** | **Yetki Türü** | **Açıklama** |
+|--------------|--------------|-------------|
+| `Device.Read.All` | **Delegated / Application** | Tenant içindeki cihaz bilgilerini okuma. |
+| `DeviceManagementManagedDevices.Read.All` | **Delegated / Application** | Yönetilen cihazları okuma. |
+| `DeviceManagementManagedDevices.PrivilegedOperations.All` | **Application** | Yönetilen cihazlar üzerinde özel işlemler gerçekleştirme (örn: wipe, sync, retire, delete). |
+| `DeviceManagementManagedDevices.ReadWrite.All` | **Application** | Yönetilen cihazları okuma ve güncelleme. |
+
+📌 **Yetkileri nasıl ekleyebilirim?**  
+1. **"Add a permission" (İzin Ekle) butonuna bas.**  
+2. **"Microsoft Graph" → "Application permissions" seçeneğini seç.**  
+3. Yukarıdaki yetkileri tek tek seç.  
+4. **"Add permissions" (İzinleri ekle) butonuna bas.**  
+5. **Yetkilerin uygulanabilmesi için "Grant admin consent" (Yönetici Onayı Ver) butonuna bas.**  
+
+✅ **Eğer "Grant admin consent" butonu pasifse, Global Admin yetkisine sahip birinin onay vermesi gerekmektedir.**
+
 
 
 
