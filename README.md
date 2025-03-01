@@ -21,9 +21,13 @@ Bu uygulama **IT profesyonelleri** için özel olarak geliştirilmiştir ve **Mi
 
 ## 📸 **Ekran Görüntüleri**
 
-| **Kimlik Doğrulama** | **Cihaz Listesi** | **Cihaz Uyumluluk Durumu** |
+| **Kimlik Doğrulama**  
 |---------------------|-----------------|----------------|
-| ![Auth Screen](https://via.placeholder.com/300) | ![Device List](https://via.placeholder.com/300) | ![Compliance Check](https://via.placeholder.com/300) |
+| ![Login](screenshots/auth1.png) | ![Login](screenshots/auth2.png) | ![Login](screenshots/auth3.png) | ![Login](screenshots/code.png) | ![Login](screenshots/auth4.png) | ![Login](screenshots/permisson.png) ![Login](screenshots/auth5.png) |
+| **Cihaz Listesi** |
+| ![Alldevices](screenshots/alldevices.png) | ![search](screenshots/search.png) | ![Action](screenshots/action.png) | ![Wipe](screenshots/wipe.png) | ![delete](screenshots/delete.png) | ![sync](screenshots/sync.png)
+**Cihaz Uyumluluk Durumu** |
+![Compliant](screenshots/compliant.png)
 
 _(Gerçek ekran görüntülerini eklemek için `screenshots/` dizinine kaydet ve bağlantılarını güncelle.)_
 
@@ -35,3 +39,7 @@ _(Gerçek ekran görüntülerini eklemek için `screenshots/` dizinine kaydet ve
 ```bash
 git clone https://github.com/MSalikoc/Ata-Intune-Device-Checker-for-iOS.git
 cd Ata-Intune-Device-Checker-for-iOS
+
+
+
+
