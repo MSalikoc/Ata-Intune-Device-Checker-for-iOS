@@ -1,0 +1,60 @@
+Welcome to the ATA Intune Device Checker testing guide. Please follow the steps below to set up and test the application properly.
+🔹 Steps to Set Up & Test the App
+
+1️⃣ App Registration in Microsoft Entra ID (Azure AD)
+
+To allow the app to access your system, you must first register it in Microsoft Entra ID (Azure AD).
+	1.	Navigate to Microsoft Entra ID (Azure AD) > App Registrations
+	2.	Click New Registration and enter:
+	•	App Name: ATA Intune Device Checker
+	•	Supported Account Type: Select “Accounts in this organizational directory only”
+	•	Redirect URI: Add
+https://login.microsoftonline.com/common/oauth2/nativeclient
+
+	3.	Click Register
+
+2️⃣ Assign API Permissions
+
+Once registered, the app requires the following API permissions:
+	1.	Go to API Permissions > Add a Permission
+	2.	Select Microsoft Graph API
+	3.	Grant the following permissions:
+	•	✅ Device.Read.All (Read device information)
+	•	✅ DeviceManagementManagedDevices.Read.All (Read managed devices)
+	•	✅ User.Read (Access basic user information)
+	4.	Click Grant admin consent for your organization
+
+3️⃣ Configure Authentication in Azure AD
+	1.	Go to the Authentication tab
+	2.	Enable “Allow public client flows”
+	3.	Click Save changes
+
+4️⃣ Tester Login & Verification
+
+After completing the registration, proceed with the following steps:
+	1.	Launch the ATA Intune Device Checker app
+	2.	Sign in using your Microsoft Entra ID (Work/School Account)
+	3.	The app should display a list of Intune-managed devices
+	4.	Verify the following:
+	•	✅ Device details (OS, Model, Compliance)
+	•	✅ Installed applications list
+	•	✅ Compliance status
+
+5️⃣ Report Any Issues
+
+If you encounter errors, please document the following details:
+	•	Error messages or logs
+	•	Steps taken before the issue occurred
+	•	Screenshots (if applicable)
+	•	Submit findings to [your email or issue tracker link]
+
+🔹 Expected Results for a Successful Test
+
+✔️ The tester can log in successfully via Microsoft Entra ID
+✔️ Intune devices appear with accurate details
+✔️ No unauthorized access errors
+✔️ App permissions work as expected
+
+🚀 Thank You!
+
+Thank you for testing ATA Intune Device Checker! If you experience any issues, please let us know.
