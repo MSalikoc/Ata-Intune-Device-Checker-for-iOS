@@ -70,7 +70,7 @@ This guide provides the steps for **registering an application in Azure Active D
    - Choose **iOS/macOS** as the platform.  
    - Enter the Redirect URI in the format:  
      ```
-     msauth.<bundle_id>://auth
+     https://login.microsoftonline.com/common/oauth2/nativeclient
      ```
      (**This value should match your Bundle ID in Xcode**).
 5. Click **"Register"** to create the application registration.
