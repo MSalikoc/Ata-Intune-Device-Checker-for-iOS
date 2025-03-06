@@ -73,14 +73,14 @@ Bu kılavuz, **Azure Active Directory (Azure AD)** üzerinde **uygulama kaydı o
 
 | **Yetki Adı** | **Yetki Türü** | **Açıklama** |
 |--------------|--------------|-------------|
-| `Device.Read.All` | **Delegated / Application** | Tenant içindeki cihaz bilgilerini okuma. |
-| `DeviceManagementManagedDevices.Read.All` | **Delegated / Application** | Yönetilen cihazları okuma. |
-| `DeviceManagementManagedDevices.PrivilegedOperations.All` | **Application** | Yönetilen cihazlar üzerinde özel işlemler gerçekleştirme (örn: wipe, sync, retire, delete). |
-| `DeviceManagementManagedDevices.ReadWrite.All` | **Application** | Yönetilen cihazları okuma ve güncelleme. |
+| `Device.Read.All` | **Delegated** | Tenant içindeki cihaz bilgilerini okuma. |
+| `DeviceManagementManagedDevices.Read.All` | **Delegated** | Yönetilen cihazları okuma. |
+| `DeviceManagementManagedDevices.PrivilegedOperations.All` | **Delegated** | Yönetilen cihazlar üzerinde özel işlemler gerçekleştirme (örn: wipe, sync, retire, delete). |
+| `DeviceManagementManagedDevices.ReadWrite.All` | **Delegated** | Yönetilen cihazları okuma ve güncelleme. |
 
 📌 **Yetkileri nasıl ekleyebilirim?**  
 1. **"Add a permission" (İzin Ekle) butonuna bas.**  
-2. **"Microsoft Graph" → "Application permissions" seçeneğini seç.**  
+2. **"Microsoft Graph" → "Delegated permissions" seçeneğini seç.**  
 3. Yukarıdaki yetkileri tek tek seç.  
 4. **"Add permissions" (İzinleri ekle) butonuna bas.**  
 5. **Yetkilerin uygulanabilmesi için "Grant admin consent" (Yönetici Onayı Ver) butonuna bas.**  
